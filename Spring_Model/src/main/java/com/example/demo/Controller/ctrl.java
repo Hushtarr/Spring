@@ -1,5 +1,6 @@
 package com.example.demo.Controller;
 
+import com.example.demo.Model.Student;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,6 +32,10 @@ public class ctrl
             num.add(ran);
             }
         model.addAttribute("num",num);
+
+
+        Student s1=new Student("Abc","Cydeo",888);
+        model.addAttribute("Student",s1);
 
 
         return "mine";
