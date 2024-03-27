@@ -1,0 +1,6 @@
+controller：用于存放Spring MVC的控制器类。
+service：包含服务层类，这些类通常包含业务逻辑。
+repository或dao：用于存放数据访问对象，通常与数据库交互。
+model或domain：包含应用的业务模型或实体类。
+config：用于配置类，例如定义Bean或Spring配置。
+util或helper：包含辅助类或工具类。
