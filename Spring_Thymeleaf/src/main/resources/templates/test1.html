@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 th:text="${'this is '+List.get(0).getName()}"></h1>
+<h1 th:text="${'from '+List.get(1).getCountry()}"></h1>
+<a th:href="@{https://www.google.com}">its link</a>
+<p></p>
+<a th:href="@{getinfo}">get info</a>
+
+
+</body>
+</html>

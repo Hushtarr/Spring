@@ -14,9 +14,16 @@ public class ctrl
     public String getinfo(Model model)
         {
         model.addAttribute("List",DTgenerate.base());
-        return "ps";
+        return "test1";
+        }
+    @RequestMapping("/getinfo")
+    public String getinfo1()
+        {
+        return "test2";
         }
     }
+
+
 //Query Parameter
 //http://localhost:8080/info2?brand=Bmw&year=2017
 //

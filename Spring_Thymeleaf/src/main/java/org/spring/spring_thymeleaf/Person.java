@@ -8,5 +8,5 @@ import lombok.Data;
 public class Person
     {
     public String name;
-    public String city;
+    public String country;
     }

@@ -11,11 +11,11 @@ public class DTgenerate
     public static List<Person> base()
         {
         List<Person>persons=new ArrayList<>(Arrays.asList(
-                new Person(new Faker().name().fullName(),new Faker().address().city()),
-                new Person(new Faker().name().fullName(),new Faker().address().city()),
-                new Person(new Faker().name().fullName(),new Faker().address().city()),
-                new Person(new Faker().name().fullName(),new Faker().address().city()),
-                new Person(new Faker().name().fullName(),new Faker().address().city())
+                new Person(new Faker().name().fullName(),new Faker().address().country()),
+                new Person(new Faker().name().fullName(),new Faker().address().country()),
+                new Person(new Faker().name().fullName(),new Faker().address().country()),
+                new Person(new Faker().name().fullName(),new Faker().address().country()),
+                new Person(new Faker().name().fullName(),new Faker().address().country())
         ));
         return persons;
         }
