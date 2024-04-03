@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <thead>
+    Lab_Info
+    <tr>
+        <td>Name</td>
+        <td>Country</td>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr  th:each="x:${List}">
+        <td th:text="${x.country}"></td>
+        <td th:text="${x.getCountry()}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

@@ -21,6 +21,12 @@ public class ctrl
         {
         return "test2";
         }
+    @RequestMapping("/lab")
+    public String lab(Model model)
+        {
+        model.addAttribute("List",DTgenerate.base());
+        return "test3";
+        }
     }
 
 
