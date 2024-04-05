@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div align="center">
+<form th:object="${gamer}" th:action="@{set}" method="post">
+    <!--action must be the value of the endpoint-->
+    <label>Game ID:</label>
+    <input type="text" th:field="*{gameId}"><br>
+
+    <label>User name:</label>
+    <input type="text" th:field="*{userName}"><br>
+
+    <label>Gender:</label>
+    <input type="radio" th:value="Male" th:field="*{gender}">male
+    <input type="radio" th:value="Female" th:field="*{gender}">female<br>
+
+
+    <label>Pro:</label>
+    <input type="checkbox"  th:field="*{pro}"><br>
+
+    <label>Team Name:</label>
+    <select th:field="*{teamName}">
+        <option th:each="x:${teamList}" th:value="${x}" th:text="${x}"></option>
+    </select><br>
+
+
+    <label>What color is your Bugatti?</label>
+    <textarea th:field="*{msg}"></textarea>
+
+    <button type="submit">Send</button>
+
+
+</form>
+</div>
+
+</body>
+</html>

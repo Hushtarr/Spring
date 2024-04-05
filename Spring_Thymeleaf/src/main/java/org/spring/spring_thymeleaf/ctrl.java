@@ -2,7 +2,15 @@ package org.spring.spring_thymeleaf;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 @Controller
 //
 //Path Variable
@@ -26,6 +34,21 @@ public class ctrl
         {
         model.addAttribute("List",DTgenerate.base());
         return "test3";
+        }
+
+    @GetMapping("/pro")
+    public String pro(Model model)
+        {
+        List<String>teamList= Arrays.asList(null,"Djungle","Code Buster","ionia");
+        model.addAttribute("teamList",teamList);
+        model.addAttribute("gamer",new Gamer());
+        return "test4";
+        }
+
+    @PostMapping("/set")
+    public String setForm(@ModelAttribute("gamer") Gamer gamer)
+        {
+            return "redirect:/student/pro";
         }
     }
 
