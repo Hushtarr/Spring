@@ -10,6 +10,7 @@ public class House
         ApplicationContext container=new AnnotationConfigApplicationContext(House_config.class);
         House_pc n1=container.getBean(House_pc.class);
         House_tv n2=container.getBean(House_tv.class);
+
         // 依赖关系的建立  方法1     (使用了component)
         n1.setPc("Mac os");
         n2.setTv("apple TV");
