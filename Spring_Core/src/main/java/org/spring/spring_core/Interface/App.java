@@ -15,6 +15,7 @@ public class App
         msg.setMessage("Hello world");
         ApplicationContext container=new  AnnotationConfigApplicationContext(Config.class);
         CommentService t1=container.getBean(CommentService.class);
-        t1.publishComment(msg);
+        t1.commentUsage(msg);
+
         }
     }

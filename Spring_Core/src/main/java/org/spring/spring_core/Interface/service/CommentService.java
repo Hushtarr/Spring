@@ -34,7 +34,7 @@ public class CommentService
         this.notific = notific;
         }
 
-    public void publishComment(Comment comment)
+    public void commentUsage(Comment comment)
         {
 
         // Store to CommentBase
