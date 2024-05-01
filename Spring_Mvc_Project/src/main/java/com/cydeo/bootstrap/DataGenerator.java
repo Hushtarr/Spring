@@ -35,10 +35,9 @@ public class DataGenerator implements CommandLineRunner
         roleService.save(Employee);
 
         Faker faker = new Faker();
-        UUID uuid = UUID.randomUUID();
-        UserDTO u1=new UserDTO(faker.name().firstName(),faker.name().lastName(),faker.name().username(),uuid.toString(),true,faker.phoneNumber().toString(),Admin, Gender.Male);
-        UserDTO u2=new UserDTO(faker.name().firstName(),faker.name().lastName(),faker.name().username(),uuid.toString(),true,faker.phoneNumber().toString(),Manager, Gender.Female);
-        UserDTO u3=new UserDTO(faker.name().firstName(),faker.name().lastName(),faker.name().username(),uuid.toString(),true,faker.phoneNumber().toString(),Employee, Gender.Female);
+        UserDTO u1=new UserDTO(faker.name().firstName(),faker.name().lastName(),faker.name().username(),"abc",true,"0991",Admin, Gender.Male);
+        UserDTO u2=new UserDTO(faker.name().firstName(),faker.name().lastName(),faker.name().username(),"def",true,"0991",Manager, Gender.Female);
+        UserDTO u3=new UserDTO(faker.name().firstName(),faker.name().lastName(),faker.name().username(),"ghi",true,"0991",Employee, Gender.Female);
 
         userService.save(u1);
         userService.save(u2);
