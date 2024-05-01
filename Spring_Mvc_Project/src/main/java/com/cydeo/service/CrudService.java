@@ -5,10 +5,10 @@ import com.cydeo.dto.UserDTO;
 
 import java.util.List;
 
-public interface CrudService<T,ID>
+public interface CrudService<Type,Reference>
     {
-    T save(T user);
-    T find(ID id);
-    List<T> findAll();
-    void delete(ID id);
+    Type save(Type user);
+    Type find(Reference id);
+    List<Type> findAll();
+    void delete(Reference id);
     }
