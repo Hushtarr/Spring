@@ -5,30 +5,30 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public abstract class AbstractMapClass <T,ID>
+public abstract class AbstractMapClass <Type,Reference>
     {
-    public Map<ID,T> map=new HashMap<>();//DB
+    public Map<Reference,Type> map=new HashMap<>();//DB
     // map<key,value>
 
-    T save(ID id,T object)
+    Type save(Reference reference,Type object)
         {
-        map.put(id,object);
+        map.put(reference,object);
         return object;
         }
 
-    T find(ID id)
+    Type find(Reference reference)
         {
-        return map.get(id);
+        return map.get(reference);
         }
 
-    List<T> findAll()
+    List<Type> findAll()
         {
         return new ArrayList<>(map.values());
         }
 
-    void delete (ID id)
+    void delete (Reference reference)
         {
-        map.remove(id);
+        map.remove(reference);
         }
 
     }

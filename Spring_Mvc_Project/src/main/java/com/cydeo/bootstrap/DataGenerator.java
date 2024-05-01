@@ -27,8 +27,9 @@ public class DataGenerator implements CommandLineRunner
     public void run(String... args) throws Exception
         {
         RoleDTO Admin = new RoleDTO(1L, "Admin");
-        RoleDTO Manager = new RoleDTO(1L, "Manager");
-        RoleDTO Employee = new RoleDTO(1L, "Employee");
+        RoleDTO Manager = new RoleDTO(2L, "Manager");
+        RoleDTO Employee = new RoleDTO(3L, "Employee");
+
         roleService.save(Admin);
         roleService.save(Manager);
         roleService.save(Employee);
@@ -38,8 +39,6 @@ public class DataGenerator implements CommandLineRunner
         UserDTO u1=new UserDTO(faker.name().firstName(),faker.name().lastName(),faker.name().username(),uuid.toString(),true,faker.phoneNumber().toString(),Admin, Gender.Male);
         UserDTO u2=new UserDTO(faker.name().firstName(),faker.name().lastName(),faker.name().username(),uuid.toString(),true,faker.phoneNumber().toString(),Manager, Gender.Female);
         UserDTO u3=new UserDTO(faker.name().firstName(),faker.name().lastName(),faker.name().username(),uuid.toString(),true,faker.phoneNumber().toString(),Employee, Gender.Female);
-
-
 
         userService.save(u1);
         userService.save(u2);

@@ -112,3 +112,9 @@ Using the `extend` keyword to extend interfaces has the following main functions
 
 Through interface extension, we can reuse and share the function definitions of existing interfaces to the maximum extent, and at the same time, 
 we can extend and evolve the interface as needed. This modular and layered design idea helps to build a robust, flexible and maintainable object-oriented system.
+
+-If the implementation class needs to use the unique functions of the sub-interface, then it should implement the sub-interface.
+
+-If the implementing class only needs to use the basic functions of the parent interface, then implementing the parent interface is enough.
+
+-If the implementation class needs to use both the basic functions of the parent interface and the extended functions of the sub-interface, then it can choose to implement both the parent interface and the sub-interface.
