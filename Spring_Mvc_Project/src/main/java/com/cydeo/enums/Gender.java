@@ -1,17 +1,18 @@
 package com.cydeo.enums;
 
+import lombok.Getter;
+
+@Getter
 public enum Gender
     {
-        Male("Male"), Female("Female");
-        private final String gender;
+        MALE("Male"), FEMALE("Female");
 
-    Gender(String gender)
+        private final String value;
+
+    Gender(String value)
         {
-        this.gender = gender;
+        this.value = value;
         }
 
-    public String getGender()
-        {
-        return gender;
-        }
+
     }
