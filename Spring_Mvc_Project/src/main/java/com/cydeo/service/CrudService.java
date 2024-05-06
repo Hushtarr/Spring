@@ -7,8 +7,9 @@ import java.util.List;
 
 public interface CrudService<Type,Reference>
     {
-    Type save(Type user);
-    Type find(Reference id);
+    Type save(Type object);
+    Type find(Reference reference);
     List<Type> findAll();
-    void delete(Reference id);
+    void delete(Reference reference);
+    void update(Type object);
     }

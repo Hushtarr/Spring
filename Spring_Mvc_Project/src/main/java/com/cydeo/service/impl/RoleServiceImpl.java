@@ -33,5 +33,11 @@ public class RoleServiceImpl extends AbstractMapClass<RoleDTO,Long> implements R
         super.delete(id);
         }
 
+    @Override
+    public void update(RoleDTO user)
+        {
+        super.update(user.getId(),user);
+        }
+
 
     }

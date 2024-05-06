@@ -1,5 +1,7 @@
 package com.cydeo.service.impl;
 
+import com.cydeo.dto.ProjectDTO;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -29,6 +31,11 @@ public abstract class AbstractMapClass <Type,Reference>
     void delete (Reference reference)
         {
         map.remove(reference);
+        }
+
+    void update(Reference reference, Type object)
+        {
+        map.put(reference,object);
         }
 
     }
