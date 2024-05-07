@@ -27,9 +27,9 @@ public class ProjectController
     public String createProject(Model model)
         {
         model.addAttribute("project",new ProjectDTO());
-        model.addAttribute("managers",userService.findAll());
+        model.addAttribute("managers",userService.findManager());
         model.addAttribute("projects",projectService.findAll());
-        return "project/create";
+        return "/project/create";
         }
 
     @PostMapping("/create")
@@ -47,18 +47,26 @@ public class ProjectController
         }
 
 
-    @GetMapping("/update{project}")
-    public String editProject(@ModelAttribute("project") ProjectDTO project,Model model)
+    @GetMapping("/update{projectCode}")
+    public String editProject(@PathVariable("projectCode") String projectCode,Model model)
         {
-        model.addAttribute("project",projectService.find(project.getProjectCode()));
-        projectService.update(project);
-        return "redirect:/project/create";
+        model.addAttribute("project",projectService.find(projectCode));
+        model.addAttribute("managers",userService.findManager());
+        model.addAttribute("projects",projectService.findAll());
+        return "/project/update";
         }
 
     @PostMapping("/update")
     public String updateProject(@ModelAttribute("project") ProjectDTO project)
         {
+        projectService.update(project);
+        return "redirect:/project/create";
+        }
 
+    @GetMapping("/complete{projectCode}")
+    public String completeProject(@PathVariable("projectCode") String projectCode)
+        {
+        projectService.complete(projectService.find(projectCode));
         return "redirect:/project/create";
         }
 
