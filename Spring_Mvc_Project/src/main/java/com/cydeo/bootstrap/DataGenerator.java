@@ -49,7 +49,7 @@ public class DataGenerator implements CommandLineRunner
 
 
 
-        ProjectDTO p1=new ProjectDTO(faker.internet().domainName(),faker.internet().password(),u2, LocalDate.now(),LocalDate.now().plusDays(5),faker.programmingLanguage().toString(), Status.COMPLETE );
+        ProjectDTO p1=new ProjectDTO(faker.internet().domainName(),faker.internet().password(),u1, LocalDate.now(),LocalDate.now().plusDays(5),faker.programmingLanguage().toString(), Status.COMPLETE );
         ProjectDTO p2=new ProjectDTO(faker.internet().domainName(),faker.internet().password(),u2, LocalDate.now(),LocalDate.now().plusDays(5),faker.programmingLanguage().toString(), Status.IN_PROGRESS );
         ProjectDTO p3=new ProjectDTO(faker.internet().domainName(),faker.internet().password(),u2, LocalDate.now(),LocalDate.now().plusDays(5),faker.programmingLanguage().toString(), Status.OPEN );
         projectService.save(p1);
