@@ -45,4 +45,12 @@ public class UserServiceImpl extends AbstractMapClass<UserDTO, String> implement
         {
         return findAll().stream().filter(user -> user.getRole().getId()==2L).collect(Collectors.toList());
         }
+
+    @Override
+    public List<UserDTO> findEmployee()
+        {
+        return findAll().stream().filter(user->user.getRole().getId()==3L).collect(Collectors.toList());
+        }
+
+
     }
