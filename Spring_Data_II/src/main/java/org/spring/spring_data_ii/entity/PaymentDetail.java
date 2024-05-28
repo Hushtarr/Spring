@@ -20,6 +20,13 @@ public class PaymentDetail
     private BigDecimal merchantPayoutAmount;
     private BigDecimal commissionAmount;
 
+    @OneToOne(mappedBy = "paymentDetail")
+    @JoinColumn(name = "joined column")
+    private Payment payment;
+    //is not make sense if we create parent class through child class
+    // but for the purpose of showing how mappedBy working
+    //mappedBy basically saying that do not create new column in current class which is being mapped
+
     @Column(columnDefinition = "Date")
     private LocalDate payoutDate;
 

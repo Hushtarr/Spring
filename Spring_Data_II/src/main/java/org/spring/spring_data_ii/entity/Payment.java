@@ -26,9 +26,17 @@ public class Payment
     @Enumerated(EnumType.STRING) // if not,it will be saved as string in database
     private Status paymentStatus;
 
-    @OneToOne
-    @JoinColumn(name = "payment_detail_id")
+   /* @OneToOne(cascade = CascadeType.ALL) //foreign key from other table,
+    // (content) is for connect the two class then perform same operation
+
+    */
+    @OneToOne(cascade = {CascadeType.PERSIST,CascadeType.MERGE})
+    @JoinColumn(name = "joined column") // rename method
     private PaymentDetail paymentDetail;
+
+    @ManyToOne //class Payment -> so we can say many payment has one merchant
+    private Merchant merchant;
+    // if can not create foreign key,then it will create third table for merging to column
 
     public Payment(LocalDate createdDate, BigDecimal amount, Status paymentStatus)
         {// no id,buz it provided  automatically
