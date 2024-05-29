@@ -19,7 +19,7 @@ public class Account extends BaseEntity
     private String postalCode;
     private Integer age;
     @Enumerated(EnumType.STRING)
-    private UserRole userRole;
+    private UserRole role;
 
     @OneToOne(mappedBy = "account") // this annotation it's going to create a foreign key in current  table (current  class)
     private User user;
