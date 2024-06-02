@@ -72,14 +72,13 @@ public class ProjectServiceImpl extends AbstractMapClass<ProjectDTO, String> imp
         List<ProjectDTO> projectList = findAll()
                 .stream()
                 .filter(projectDTO -> projectDTO.getAssignedManager().equals(manager))
-                .map(projectDTO ->
+                .peek(projectDTO ->
                     {
                     List<TaskDTO>taskDTOS=taskService.findTaskByManager(manager);
                     int completedTasksCounts= (int) taskDTOS.stream().filter(x->x.getProject().equals(projectDTO)&&x.getProject().getStatus()==Status.COMPLETE).count();
                     int unfinishedTasksCounts= (int) taskDTOS.stream().filter(x->x.getProject().equals(projectDTO)&&x.getProject().getStatus()==Status.IN_PROGRESS).count();
                     projectDTO.setCompletedTasksCounts(completedTasksCounts);
                     projectDTO.setUnfinishedTasksCounts(unfinishedTasksCounts);
-                    return projectDTO;
                     })
                 .collect(Collectors.toList());
          return projectList;
