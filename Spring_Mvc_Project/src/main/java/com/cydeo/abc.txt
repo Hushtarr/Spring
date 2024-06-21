@@ -1,0 +1,7 @@
+Service:
+find the manager method
+method for find this manager projects
+calcul method for the projects (finished / unfinished)
+
+
+
