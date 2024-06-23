@@ -2,13 +2,11 @@ package com.cydeo.controller;
 
 import com.cydeo.dto.CourseDTO;
 import com.cydeo.dto.ResponseWrapper;
-import com.cydeo.entity.Course;
 import com.cydeo.service.CourseService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @RestController
 @RequestMapping("/courses/api/v3")
@@ -37,5 +35,19 @@ public class Coursecontroller_ResponseWrapper {
     public ResponseEntity<ResponseWrapper>findCourseById(@PathVariable("id") Long id){
         return ResponseEntity
                 .ok(new ResponseWrapper("course id: "+id+" finded",courseService.getCourseById(id)));
+    }
+
+    @DeleteMapping("{id}")
+    public ResponseEntity<Void>deleteCourse(@PathVariable("id") Long id){
+        courseService.deleteCourseById(id);
+        return ResponseEntity
+                .noContent()
+                .build();
+    }
+
+    @PutMapping("{id}")
+    public ResponseEntity<Void>updateCourse(@PathVariable("id") Long id,@RequestBody CourseDTO courseDTO){
+        courseService.updateCourse(id, courseDTO);
+        return ResponseEntity.noContent().build();
     }
 }

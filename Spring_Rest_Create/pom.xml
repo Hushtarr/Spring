@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.cydeo</groupId>
-    <artifactId>Spring_Rest</artifactId>
+    <artifactId>Spring_Rest_Create</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Spring_Rest</name>
     <description>Spring_Rest</description>
