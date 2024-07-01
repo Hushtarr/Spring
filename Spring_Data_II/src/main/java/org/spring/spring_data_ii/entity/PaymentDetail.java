@@ -24,8 +24,8 @@ public class PaymentDetail
     @JoinColumn(name = "joined column")
     private Payment payment;
     //is not make sense if we create parent class through child class
-    // but for the purpose of showing how mappedBy working
-    //mappedBy basically saying that do not create new column in current class which is being mapped
+    // but to show how mappedBy working
+    //mappedBy basically saying that do not create new column in the current class which is being mapped
 
     @Column(columnDefinition = "Date")
     private LocalDate payoutDate;
